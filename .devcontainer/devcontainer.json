@@ -2,7 +2,7 @@
   "name": "PHP Apache MySQL SQLite",
   "dockerComposeFile": "docker-compose.yml",
   "service": "web",
-  "workspaceFolder": "/var/www/html",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}/src",
   "forwardPorts": [8080, 8081],
   "customizations": {
     "vscode": {
