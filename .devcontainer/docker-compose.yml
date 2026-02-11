@@ -2,25 +2,18 @@ version: "3.9"
 
 services:
   web:
-    image: php:8.2-apache
-    container_name: apache_php
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
     ports:
       - "8080:80"
     volumes:
       - ../src:/var/www/html
     depends_on:
       - db
-    command: >
-      bash -c "
-      apt-get update &&
-      apt-get install -y sqlite3 &&
-      docker-php-ext-install pdo pdo_mysql mysqli pdo_sqlite &&
-      apache2-foreground
-      "
 
   db:
     image: mysql:8.0
-    container_name: mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -29,12 +22,9 @@ services:
       MYSQL_PASSWORD: app_pass
     volumes:
       - mysql_data:/var/lib/mysql
-    ports:
-      - "3306:3306"
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin
     restart: always
     ports:
       - "8081:80"
