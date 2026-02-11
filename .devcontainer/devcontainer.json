@@ -1,10 +1,10 @@
 {
-  "name": "Apache PHP MySQL",
+  "name": "PHP Apache MySQL SQLite",
   "dockerComposeFile": "docker-compose.yml",
   "service": "web",
   "workspaceFolder": "/var/www/html",
-  "forwardPorts": [8080, 8081, 3306],
-  "postCreateCommand": "apt update",
+  "forwardPorts": [8080, 8081],
+  "postCreateCommand": "echo Ambiente pronto!",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -15,4 +15,3 @@
     }
   }
 }
-
