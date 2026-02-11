@@ -4,13 +4,11 @@
   "service": "web",
   "workspaceFolder": "/var/www/html",
   "forwardPorts": [8080, 8081],
-  "postCreateCommand": "echo Ambiente pronto!",
   "customizations": {
     "vscode": {
       "extensions": [
         "bmewburn.vscode-intelephense-client",
-        "xdebug.php-debug",
-        "ms-azuretools.vscode-docker"
+        "xdebug.php-debug"
       ]
     }
   }
