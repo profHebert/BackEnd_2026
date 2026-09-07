@@ -7,8 +7,10 @@ RUN apt-get update && \
         curl \
         sqlite3 \
         libsqlite3-dev \
+        libpq-dev \
     && docker-php-ext-install \
         pdo \
         pdo_mysql \
         mysqli \
-        pdo_sqlite
+        pdo_sqlite \
+        pdo_pgsql
