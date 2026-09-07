@@ -1,9 +1,23 @@
 {
-  "name": "PHP Apache MySQL SQLite",
+  "name": "PHP Apache MySQL PostgreSQL",
   "dockerComposeFile": "docker-compose.yml",
   "service": "web",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}/src",
-  "forwardPorts": [8080, 8081],
+  "forwardPorts": [8080, 8081, 8082],
+  "portsAttributes": {
+    "8080": {
+      "label": "App PHP",
+      "onAutoForward": "notify"
+    },
+    "8081": {
+      "label": "phpMyAdmin (MySQL)",
+      "onAutoForward": "silent"
+    },
+    "8082": {
+      "label": "Adminer (PostgreSQL)",
+      "onAutoForward": "silent"
+    }
+  },
   "customizations": {
     "vscode": {
       "extensions": [
